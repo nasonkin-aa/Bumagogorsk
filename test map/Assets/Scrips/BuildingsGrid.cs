@@ -36,28 +36,29 @@ public class BuildingsGrid : MonoBehaviour
     { 
         if (flyingBuildings != null)
         {
-            flyingBuildings.transform.position = new Vector3(dp.DiamondPos.x,dp.DiamondPos.y, 1);
-           
-          
-            if (Input.GetMouseButtonDown(0))
+            flyingBuildings.transform.position = new Vector3(dp.DiamondPos.x, dp.DiamondPos.y, 1);
+            CheckPlace();
+        }
+    }
+    private void CheckPlace()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            for (int x = 0; x < 20; x++)
             {
-                for (int x = 0; x < 20; x++)
+                for (int y = 0; y < 20; y++)
                 {
-                    for (int y = 0; y < 20; y++)
+                    if (dp.hitDiamond.collider.gameObject == Matrix.Grid[x, y].Dimond.gameObject
+                        && (!BuildingStay.Contains(Matrix.Grid[x, y].Dimond.gameObject)))
                     {
-                        if (dp.hitDiamond.collider.gameObject == matrix.grid[x, y].gameObject 
-                            && (!BuildingStay.Contains(matrix.grid[x, y].gameObject)))
-                        {
-                            BuildingStay.Add(matrix.grid[x, y]);
-                            Debug.Log(BuildingStay.Count);
-                            Debug.Log(x + "   " + y);
-                        }
+                        BuildingStay.Add(Matrix.Grid[x, y].Dimond);
+                        Debug.Log(BuildingStay.Count);
+                        Debug.Log(x + "   " + y);
                     }
                 }
-                flyingBuildings = null;
             }
+            flyingBuildings = null;
         }
     }
 
-  
 }
