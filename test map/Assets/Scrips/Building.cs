@@ -9,6 +9,9 @@ public class Building : MonoBehaviour
     {
         if (collision.gameObject.name == "IsometricDiamond(Clone)")
         {
+            /* Matrix.Grid[(int)collision.gameObject.GetComponent<DiamondsInMatrixPosition>().DimondPos.x,
+                (int)collision.gameObject.GetComponent<DiamondsInMatrixPosition>().DimondPos.y].State = Matrix.DiamondStates.House;*/
+            
             BuildingStayPlace.Add(collision.gameObject);
             BuildingCheck();
         }
@@ -17,29 +20,39 @@ public class Building : MonoBehaviour
     {
         if (collision.gameObject.name == "IsometricDiamond(Clone)")
         {
+            /*Matrix.Grid[(int)collision.gameObject.GetComponent<DiamondsInMatrixPosition>().DimondPos.x,
+               (int)collision.gameObject.GetComponent<DiamondsInMatrixPosition>().DimondPos.y].State = Matrix.DiamondStates.None;*/
+
             BuildingStayPlace.Remove(collision.gameObject);
             BuildingCheck();
         }
-        Debug.Log(BuildingStayPlace.Count);
     }
     private void BuildingCheck()
     {
         foreach (GameObject place in BuildingStayPlace)
         {
-            for (int x = 0; x < Matrix.GridSize; x++)
+            if (Matrix.Grid[(int)place.GetComponent<DiamondsInMatrixPosition>().DimondPos.x,
+               (int)place.GetComponent<DiamondsInMatrixPosition>().DimondPos.y].State != Matrix.DiamondStates.None)
             {
-                for (int y = 0; y < Matrix.GridSize; y++)
-                {
-                    if (place == Matrix.Grid[x, y].Dimond && Matrix.Grid[x, y].State != Matrix.DiamodnStates.None)
-                    {
-                        Debug.Log("ddddddaaaaaa");
-                        transform.GetComponent<SpriteRenderer>().color = Color.red;
-                        return;
-                    }
-                }
+                Debug.Log("ddddddaaaaaa");
+                transform.GetComponent<SpriteRenderer>().color = Color.red;
+                return;
             }
         }
         transform.GetComponent<SpriteRenderer>().color = Color.white;
     }
-    
+
+    public void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            foreach (GameObject place in BuildingStayPlace)
+            {
+                Matrix.Grid[(int)place.GetComponent<DiamondsInMatrixPosition>().DimondPos.x,
+                (int)place.GetComponent<DiamondsInMatrixPosition>().DimondPos.y].State = Matrix.DiamondStates.House;
+            }
+
+        }
+    }
 }
+ 

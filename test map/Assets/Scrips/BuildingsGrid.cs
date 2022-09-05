@@ -48,12 +48,12 @@ public class BuildingsGrid : MonoBehaviour
             {
                 for (int y = 0; y < 20; y++)
                 {
-                    if (dp.hitDiamond.collider.gameObject == Matrix.Grid[x, y].Dimond.gameObject
-                        && (!BuildingStay.Contains(Matrix.Grid[x, y].Dimond.gameObject)))
+                    if (dp.hitDiamond.collider.gameObject == Matrix.Grid[x, y].DiamondInMatrix.gameObject
+                        && (!BuildingStay.Contains(Matrix.Grid[x, y].DiamondInMatrix.gameObject)))
                     {
-                        BuildingStay.Add(Matrix.Grid[x, y].Dimond);
-                        Debug.Log(BuildingStay.Count);
-                        Debug.Log(x + "   " + y);
+                        BuildingStay.Add(Matrix.Grid[x, y].DiamondInMatrix);
+                        //Debug.Log(BuildingStay.Count);
+                        //Debug.Log(x + "   " + y);
                     }
                 }
             }
