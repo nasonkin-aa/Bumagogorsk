@@ -14,9 +14,6 @@ public class BuildingsGrid : MonoBehaviour
 
     public Matrix matrix;
 
-    public List<GameObject> BuildingStay = new List<GameObject>();
-
-
     private void Awake()
     {
         grid = new  Building[SizeGrid.x,SizeGrid.y];
@@ -44,18 +41,10 @@ public class BuildingsGrid : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            for (int x = 0; x < 20; x++)
+            foreach (GameObject place in flyingBuildings.BuildingStayPlace)
             {
-                for (int y = 0; y < 20; y++)
-                {
-                    if (dp.hitDiamond.collider.gameObject == Matrix.Grid[x, y].DiamondInMatrix.gameObject
-                        && (!BuildingStay.Contains(Matrix.Grid[x, y].DiamondInMatrix.gameObject)))
-                    {
-                        BuildingStay.Add(Matrix.Grid[x, y].DiamondInMatrix);
-                        //Debug.Log(BuildingStay.Count);
-                        //Debug.Log(x + "   " + y);
-                    }
-                }
+                Matrix.Grid[(int)place.GetComponent<DiamondsInMatrixPosition>().DimondPos.x,
+                (int)place.GetComponent<DiamondsInMatrixPosition>().DimondPos.y].State = Matrix.DiamondStates.House;
             }
             flyingBuildings = null;
         }

@@ -22,9 +22,7 @@ public class DiamondPosition : MonoBehaviour
 
         if ( hit.collider != null && hit.collider.name == "IsometricDiamond(Clone)" && hit.collider.gameObject)
         {
-
             hitDiamond = hit;
-
             DiamondPos = hit.transform.position;
         }
         
