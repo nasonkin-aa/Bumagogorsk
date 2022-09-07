@@ -26,14 +26,13 @@ public class BuildingsGrid : MonoBehaviour
         { 
             Destroy(flyingBuildings.gameObject);
         }
-
         flyingBuildings = Instantiate(buildingsPrefab);
     }
     void Update()
     { 
         if (flyingBuildings != null)
         {
-            flyingBuildings.transform.position = new Vector3(dp.DiamondPos.x, dp.DiamondPos.y, 1);
+            flyingBuildings.transform.position = new Vector3(dp.DiamondPos.x, dp.DiamondPos.y, dp.DiamondPos.y * 0.1f);
             CheckPlace();
         }
     }
