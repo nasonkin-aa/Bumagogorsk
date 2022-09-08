@@ -6,8 +6,8 @@ public class BuildingsGrid : MonoBehaviour
 {
     public Vector2Int SizeGrid = new Vector2Int(100,100);
 
-    private Building[,] grid;
-    private Building flyingBuildings;
+    private BuildingCollisionController[,] grid;
+    private BuildingCollisionController flyingBuildings;
 
     private Camera mainCamera;
     public DiamondPosition dp;
@@ -16,11 +16,11 @@ public class BuildingsGrid : MonoBehaviour
 
     private void Awake()
     {
-        grid = new  Building[SizeGrid.x,SizeGrid.y];
+        grid = new BuildingCollisionController[SizeGrid.x,SizeGrid.y];
         mainCamera = Camera.main;
     }
 
-    public void StartPlacingBuilding(Building buildingsPrefab)
+    public void StartPlacingBuilding(BuildingCollisionController buildingsPrefab)
     {
         if(flyingBuildings != null)
         { 

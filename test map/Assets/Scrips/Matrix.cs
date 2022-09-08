@@ -12,6 +12,9 @@ public class Matrix : MonoBehaviour
 
     public GameObject DiamondPrefab;
 
+
+    public static bool IsFree(int x, int y) => grid[x, y].State != DiamondStates.None;
+   
     public enum DiamondStates
     {
         None,

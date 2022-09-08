@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Building : MonoBehaviour
+public class BuildingCollisionController : MonoBehaviour
 {
     public List<GameObject> BuildingStayPlace = new List<GameObject>();
     public void OnTriggerEnter2D(Collider2D collision)
@@ -25,8 +25,8 @@ public class Building : MonoBehaviour
     {
         foreach (GameObject place in BuildingStayPlace)
         {
-            if (Matrix.Grid[(int)place.GetComponent<DiamondsInMatrixPosition>().DimondPos.x,
-               (int)place.GetComponent<DiamondsInMatrixPosition>().DimondPos.y].State != Matrix.DiamondStates.None)
+            var diamondPos = place.GetComponent<DiamondsInMatrixPosition>().DimondPos;
+            if (Matrix.IsFree((int)diamondPos.x, (int)diamondPos.y))
             {
                 transform.GetComponent<SpriteRenderer>().color = Color.red;
                 return;
