@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class Factory : Building
 {
-  
+  //cutpaper
     private void Awake()
     {
-        _receivedResurece = 100;
         _type = BuildingType.Factory;
-        Debug.Log(_receivedResurece+ " awake");
+        _receivedResources = 0;
+        _receivedMaxResources = 100;
+        _generationSpeed = 10;
+        Debug.Log(_receivedResources+ " awake");
+
     }
     public override void GetResurse()
     {
-        ResurceManager.AddPaper(_receivedResurece);
+        ResurceManager.AddPaper((int)_receivedResources);
     }
 }

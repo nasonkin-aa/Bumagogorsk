@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: -8879223273906579695}
   - component: {fileID: 3029743086083800421}
   m_Layer: 18
+  - component: {fileID: -8618642240234538503}
+  m_Layer: 0
   m_Name: city_hall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +176,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10, y: 8.76}
   m_EdgeRadius: 0
---- !u!114 &3029743086083800421
+--- !u!114 &-8618642240234538503
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -183,7 +185,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7036608043381233082}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c77b4a98309a19b408fef270a6b342ad, type: 3}
+  m_Script: {fileID: 11500000, guid: af0545dd74cfdb8408b0763ceaf7b93d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 0
+  _type: 2
