@@ -14,7 +14,7 @@ namespace Slicer2D {
 		void SliceEvent(Slice2D slice){
 			foreach(GameObject g in slice.GetGameObjects()) {
 				Vector3 pos = g.transform.position;
-				pos.z = Random.Range(pos.z, 50);
+				//pos.z = Random.Range(pos.z, 50);
 				g.transform.position = pos;
 
 				Rigidbody2D rb = g.GetComponent<Rigidbody2D>();

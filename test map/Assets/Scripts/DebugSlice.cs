@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Slicer2D;
+using UnityEngine.UI;
 
 public class DebugSlice : MonoBehaviour
 {
+    public Text cutPaperCount;
     public void Start()
     {
         EventHandling.globalSliceResultEvent += DebugLogerSlice;
+        cutPaperCount.text = ResurceManager._cutPaper.ToString();
     }
 
     void DebugLogerSlice(Slice2D slice)
@@ -40,18 +43,20 @@ public class DebugSlice : MonoBehaviour
             else
                 cutPerfect = Mathf.Abs(startLocalX - x3) + Mathf.Abs(endLocalX - x1);
         }
-        UnityEngine.Debug.Log(cutPerfect);
+        //UnityEngine.Debug.Log(cutPerfect);
         if (cutPerfect < (slice.originGameObject.transform.localScale.x + slice.originGameObject.transform.localScale.y) / 10)
         {
+            //ResurceManager._cutPaper++;
+            cutPaperCount.text = (++ResurceManager._cutPaper).ToString();
             //UnityEngine.Debug.Log("Good");
         }
-        else
+        
             //UnityEngine.Debug.Log("Bad");
 
         /*UnityEngine.Debug.Log("StartCut: " + startLocalX + " " + startLocalY + " " + x1 + " " + x2);
         UnityEngine.Debug.Log("EndCut: " + endLocalX + " " + endLocalY + " " + x3 + " " + x4);*/
-        UnityEngine.Debug.Log(slice.originGameObject.transform.localScale.x+ " " +slice.originGameObject.transform.localScale.y);
-        UnityEngine.Debug.Log((slice.originGameObject.transform.localScale.x + slice.originGameObject.transform.localScale.y) / 10);
+        //UnityEngine.Debug.Log(slice.originGameObject.transform.localScale.x+ " " +slice.originGameObject.transform.localScale.y);
+        //UnityEngine.Debug.Log((slice.originGameObject.transform.localScale.x + slice.originGameObject.transform.localScale.y) / 10);
 
     }
 

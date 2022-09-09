@@ -6,6 +6,7 @@ using Slicer2D;
 public class CreatePaper : MonoBehaviour
 {
     public GameObject paper;
+    public GameObject parent;
     public int time = 2;
     private float timer = 0;
 
@@ -18,7 +19,7 @@ public class CreatePaper : MonoBehaviour
     {
         if (timer > time)
         {
-            GameObject newCactus = Instantiate(paper, transform.position, transform.rotation);
+            GameObject paperNew = Instantiate(paper, transform.position, transform.rotation, parent.transform);
             timer = 0;
         }
         
