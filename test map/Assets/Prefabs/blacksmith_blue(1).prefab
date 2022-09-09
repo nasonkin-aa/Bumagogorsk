@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8104590233964321163}
   - component: {fileID: 2149476849647030882}
   - component: {fileID: 1532208990998641683}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: blacksmith_blue(1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,9 +72,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1839202649
+  m_SortingLayer: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 9b3709898e5c84042b230a704fe42fe6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -98,8 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9de06a3a92346cc419bc52e84cd2cefa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 1, y: 1}
-  MainRender: {fileID: 0}
+  BuildingStayPlace: []
 --- !u!68 &1532208990998641683
 EdgeCollider2D:
   m_ObjectHideFlags: 0

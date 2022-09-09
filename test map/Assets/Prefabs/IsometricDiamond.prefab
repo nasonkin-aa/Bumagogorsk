@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6705187043668190797}
   - component: {fileID: 5190771096433497022}
   - component: {fileID: 4757028335760198763}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: IsometricDiamond
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 731785139834455836}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.66, y: 2.37, z: 3}
+  m_LocalPosition: {x: 10.66, y: 2.37, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -39,7 +39,7 @@ public class Matrix : MonoBehaviour
         {
             for (int y = 0; y < gridSize; y++)
             {
-                Debug.Log(grid.GetEnumerator());
+                //Debug.Log(grid.GetEnumerator());
                 grid[x, y].DiamondInMatrix = Instantiate(DiamondPrefab, new Vector3(transform.position.x + (x * 0.5f + 0.5f * y), transform.position.y + (y * 0.25f - 0.25f * x), 5), new Quaternion(),transform);
                 //grid[x, y].DiamondInMatrix.GetComponent<SpriteRenderer>().color = Random.ColorHSV(0,1,1,1,0.5f,1);
                 grid[x, y].DiamondInMatrix.GetComponent<SpriteRenderer>().color = new Color(0.94617f, 0.91380f, 0.861123f);
