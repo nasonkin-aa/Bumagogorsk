@@ -12,7 +12,7 @@ public class Factory : Building
         _receivedMaxResources = 100;
         _generationSpeed = 10;
         Debug.Log(_receivedResources+ " awake");
-
+        //progressSlider.
     }
     public override void GetResurse()
     {

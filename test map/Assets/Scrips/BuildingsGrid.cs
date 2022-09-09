@@ -38,10 +38,11 @@ public class BuildingsGrid : MonoBehaviour
     }
     private void CheckPlace()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && flyingBuildings.GetComponent<SpriteRenderer>().color != Color.red)
         {
             foreach (GameObject place in flyingBuildings.BuildingStayPlace)
             {
+
                 Matrix.Grid[(int)place.GetComponent<DiamondsInMatrixPosition>().DimondPos.x,
                 (int)place.GetComponent<DiamondsInMatrixPosition>().DimondPos.y].State = Matrix.DiamondStates.House;
             }

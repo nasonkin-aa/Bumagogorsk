@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class Building : MonoBehaviour
 {
@@ -12,8 +13,10 @@ public abstract class Building : MonoBehaviour
     protected float _receivedMaxResources;
     [SerializeField] 
     protected float _generationSpeed;
-
+    [SerializeField]
     protected Coroutine buildingBehavor;
+    [SerializeField]
+    protected Slider progressSlider;
     public enum BuildingType
     {
         Factory,
@@ -45,5 +48,11 @@ public abstract class Building : MonoBehaviour
             yield return null;
         }
     }
+    public void UpdateUI(float current, float maxValue)
+    {
+        progressSlider.value = current;
+        progressSlider.maxValue = maxValue;
+    }
+   
 
 }
