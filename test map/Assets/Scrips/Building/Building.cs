@@ -17,6 +17,7 @@ public abstract class Building : MonoBehaviour
     protected Coroutine buildingBehavor;
     [SerializeField]
     protected Slider progressSlider;
+    protected bool IsMousDown;
     public enum BuildingType
     {
         Factory,
@@ -24,12 +25,16 @@ public abstract class Building : MonoBehaviour
         CityHall,
         Mall
     }
+    public void OnMouseDown()
+    {
+        IsMousDown = true;
+
+    }
     public void OnMouseUp()
     {
         GetResurse();
         StartCoroutine(AddResource());
         _receivedResources = 0;
-
     }
     public abstract void GetResurse();
 
@@ -37,14 +42,26 @@ public abstract class Building : MonoBehaviour
     {
         while (true)
         {
-            if(_receivedResources < _receivedMaxResources)
+            if (_receivedResources < _receivedMaxResources)
             {
-                _receivedResources += _generationSpeed * Time.deltaTime;
+                _receivedResources +=  _generationSpeed * Time.deltaTime;
+                if(IsMousDown && Input.GetMouseButtonDown(0))
+                {
+                    IsMousDown=false;
+                    break;
+                }
+                
             }
             else
             {
                 _receivedResources = _receivedMaxResources;
+                if (IsMousDown && Input.GetMouseButtonDown(0))
+                {
+                    IsMousDown = false;
+                    break;
+                }
             }
+            UpdateUI(_receivedResources, _receivedMaxResources);
             yield return null;
         }
     }

@@ -9,13 +9,11 @@ public class Factory : Building
     {
         _type = BuildingType.Factory;
         _receivedResources = 0;
-        _receivedMaxResources = 100;
-        _generationSpeed = 10;
-        Debug.Log(_receivedResources+ " awake");
-        //progressSlider.
+        _receivedMaxResources = 20;
+        _generationSpeed = 0.5f;
     }
     public override void GetResurse()
     {
-        ResurceManager.AddPaper((int)_receivedResources);
+        ResurceManager.AddCutPaper((int)_receivedResources);
     }
 }

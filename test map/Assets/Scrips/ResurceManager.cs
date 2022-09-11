@@ -6,7 +6,7 @@ public static class ResurceManager
 {
     public static int _paper { get; private set; }
     public static int _maxPaper { get; private set; } = 1000;
-    public static int _cutPaper { get; private set; }
+    public static int _cutPaper { get; set; }
     public static int _population { get; private set; }
     public static int _MaxPopulation { get; private set; }
     public static int _coins { get; private set;}
@@ -17,11 +17,14 @@ public static class ResurceManager
     public static void AddPaper(int amount)
     {
         _paper = _paper + amount > _maxPaper ? _maxPaper : _paper + amount;
-        Debug.Log(_paper );
     }
     public static void AddCutPaper(int amount)
     {
-
+        _cutPaper += amount;
+    }
+    public static void AddCoins(int amount)
+    {
+        _coins += amount;
     }
     public static void AddPopulation(int amount)
     {

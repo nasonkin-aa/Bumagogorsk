@@ -152,6 +152,7 @@ MonoBehaviour:
   _receivedResources: 0
   _receivedMaxResources: 0
   _generationSpeed: 0
+  progressSlider: {fileID: 6564962821689154369}
 --- !u!114 &2712239069357546297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,8 +311,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.39, y: 0}
-  m_SizeDelta: {x: 147.73, y: 20}
+  m_AnchoredPosition: {x: -0.00000059605, y: -0.00000059605}
+  m_SizeDelta: {x: 75.31, y: 12.27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6564962821689154369
 MonoBehaviour:
@@ -338,7 +339,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.19607845, g: 0.45882356, b: 0.7294118, a: 0.62352943}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -352,7 +353,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 191523520573123435}
   m_HandleRect: {fileID: 0}
@@ -360,7 +361,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -423,7 +424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.23529413, g: 0.5921569, b: 0.9607844, a: 0.6313726}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.36862746}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -467,7 +468,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7188187424115604800}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1.31}
   m_LocalScale: {x: 0.07, y: 0.15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -477,8 +478,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -1.37, y: 5.82}
-  m_SizeDelta: {x: 202.96, y: 36.8}
+  m_AnchoredPosition: {x: -0.72, y: 5.45}
+  m_SizeDelta: {x: 109.169, y: 21.468}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &2547539301075724649
 Canvas:
@@ -498,8 +499,8 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1825709081
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!114 &1943630051556266249
 MonoBehaviour:
@@ -600,7 +601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.23529413, g: 0.5921569, b: 0.9607844, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

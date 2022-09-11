@@ -6,8 +6,10 @@ public class House : Building
 {
     private void Awake()
     {
-        _receivedResources = 1;
         _type = BuildingType.House;
+        _receivedResources = 0;
+        _receivedMaxResources = 3;
+        _generationSpeed = 1;
     }
     public override void GetResurse()
     {

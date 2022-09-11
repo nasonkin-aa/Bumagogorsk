@@ -6,12 +6,14 @@ public class Mall : Building
 {
     void Awake()
     {
-        _receivedResources = 300;
+        _receivedResources = 0;
+        _receivedMaxResources = 50;
+        _generationSpeed = 3;
         _type = BuildingType.Mall;
     }
     public override void GetResurse()
     {
-        //ResurceManager.add(_receivedResources);
+        ResurceManager.AddCoins((int)_receivedResources);
     }
 
 }
