@@ -11,6 +11,7 @@ public class BuildingCollisionController : MonoBehaviour
         {
             BuildingStayPlace.Add(collision.gameObject);
             BuildingCheck();
+            Debug.Log(BuildingStayPlace);
         }
     }
     public void OnTriggerExit2D(Collider2D collision)

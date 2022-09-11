@@ -10,6 +10,7 @@ public class DiamondPosition : MonoBehaviour
     public Vector2 DiamondPos;
     //public string[] BuildingStay;
     public RaycastHit2D hitDiamond;
+    public LayerMask layerMask;
     void Start()
     {
         mainCamera = Camera.main;
@@ -18,7 +19,7 @@ public class DiamondPosition : MonoBehaviour
     void Update()
     {   
         Vector2 worldPoint = Camera.main.ScreenToWorldPoint( Input.mousePosition );
-        RaycastHit2D hit = Physics2D.Raycast( worldPoint, Vector2.zero );
+        RaycastHit2D hit = Physics2D.Raycast( worldPoint, Vector2.zero,5f,layerMask );
 
         if ( hit.collider != null && hit.collider.name == "IsometricDiamond(Clone)" && hit.collider.gameObject)
         {

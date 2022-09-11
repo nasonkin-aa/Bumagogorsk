@@ -18,17 +18,43 @@ public class Matrix : MonoBehaviour
    
     public enum DiamondStates
     {
-        None,
         Factory,
         House,
         CityHall,
-        Roud
+        Mall,
+        Roud,
+        None
     }
     public struct MatrixElements
     {
         public GameObject DiamondInMatrix;
         public GameObject Building;
         public DiamondStates State;
+    }
+    public enum sides
+    {
+        left,
+        down,
+        right,
+        top,
+    }
+    public static Dictionary<sides,GameObject> GetNeiborhood(int x, int y)
+    {
+        var list2 = new Dictionary<sides, GameObject>();
+        var counter = 0;
+        List<GameObject> list = new List<GameObject>();
+            for(int i = -1; i < 2; i += 2)
+            {
+                if (0 <= i + x && i + x < gridSizeX && 0 <= y  && y < gridSizeY)
+                    if (grid[x + i,y].State != DiamondStates.None)
+                        list2.Add((sides)counter, grid[x + i, y].Building);
+                counter++;
+                if (0 <= x && x < gridSizeX && 0 <= i + y && i + y < gridSizeY)
+                    if (grid[x , y + i].State != DiamondStates.None)
+                        list2.Add((sides)counter, grid[x, y + i].Building);
+                counter++;
+            }
+        return list2;
     }
     void Start()
     {

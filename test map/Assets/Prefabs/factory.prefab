@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -7253684823171973757}
   - component: {fileID: 2712239069357546297}
   - component: {fileID: -7322691375448300903}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: factory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1825709081
   m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: c0135e8c447fd50468381a7db809a495, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -202,7 +202,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8640100304162099458}
   - component: {fileID: 4654563822446214676}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -247,7 +247,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3203411369471975815}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,7 +285,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7259666676312203300}
   - component: {fileID: 6564962821689154369}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -376,7 +376,7 @@ GameObject:
   - component: {fileID: 1731260762368482223}
   - component: {fileID: 2318197533847038358}
   - component: {fileID: 4750054247117301850}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -453,7 +453,7 @@ GameObject:
   - component: {fileID: 2547539301075724649}
   - component: {fileID: 1943630051556266249}
   - component: {fileID: 1949610701768668915}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -553,7 +553,7 @@ GameObject:
   - component: {fileID: 191523520573123435}
   - component: {fileID: 3537707015167046859}
   - component: {fileID: 2879155621691627694}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}

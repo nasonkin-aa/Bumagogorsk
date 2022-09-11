@@ -18,12 +18,22 @@ public abstract class Building : MonoBehaviour
     [SerializeField]
     protected Slider progressSlider;
     protected bool IsMousDown;
+
+    public int GetBuildingType()
+    {
+        return (int)_type;
+    }
     public enum BuildingType
     {
         Factory,
         House,
         CityHall,
-        Mall
+        Mall,
+        Roud
+    }
+    public void Start()
+    {
+        //this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
     }
     public void OnMouseDown()
     {
@@ -33,33 +43,35 @@ public abstract class Building : MonoBehaviour
     public void OnMouseUp()
     {
         GetResurse();
-        StartCoroutine(AddResource());
         _receivedResources = 0;
+       
+    }
+    public void CorutinStart()
+    {
+        StartCoroutine(AddResource());
     }
     public abstract void GetResurse();
 
-    protected IEnumerator AddResource()
+    public abstract bool TryToBuilding();
+
+    public  IEnumerator AddResource()
     {
         while (true)
         {
             if (_receivedResources < _receivedMaxResources)
             {
                 _receivedResources +=  _generationSpeed * Time.deltaTime;
-                if(IsMousDown && Input.GetMouseButtonDown(0))
-                {
-                    IsMousDown=false;
-                    break;
-                }
+               
                 
             }
             else
             {
                 _receivedResources = _receivedMaxResources;
-                if (IsMousDown && Input.GetMouseButtonDown(0))
+                /*if (IsMousDown && Input.GetMouseButtonDown(0))
                 {
                     IsMousDown = false;
                     break;
-                }
+                }*/
             }
             UpdateUI(_receivedResources, _receivedMaxResources);
             yield return null;
@@ -67,6 +79,10 @@ public abstract class Building : MonoBehaviour
     }
     public void UpdateUI(float current, float maxValue)
     {
+        if(_type == BuildingType.Roud)
+        {
+            return;
+        }
         progressSlider.value = current;
         progressSlider.maxValue = maxValue;
     }

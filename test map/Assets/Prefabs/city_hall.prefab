@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6179815028955966166}
   - component: {fileID: 8880714136779031219}
   - component: {fileID: 6874488408047229736}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1017416426379081270}
   - component: {fileID: 8065574147245102851}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 4428417298424084703}
   - component: {fileID: 3057865910073861211}
   - component: {fileID: 1613572567523481696}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,7 +277,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5087228346539403729}
   - component: {fileID: 7435771285652413391}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -322,7 +322,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2341792280330646339}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -361,7 +361,7 @@ GameObject:
   - component: {fileID: 7618747186415390280}
   - component: {fileID: 293912839914472534}
   - component: {fileID: 170462269338402058}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -441,7 +441,7 @@ GameObject:
   - component: {fileID: 7036608043381233078}
   - component: {fileID: -8879223273906579695}
   - component: {fileID: -8618642240234538503}
-  m_Layer: 18
+  m_Layer: 3
   m_Name: city_hall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
