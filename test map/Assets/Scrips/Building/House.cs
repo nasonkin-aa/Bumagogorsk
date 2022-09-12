@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class House : Building
 {
-    private int _cutPaperCost = 10;
-    private int _coinCost = 50;
     private void Awake()
     {
+        _exp = 4;
+        _cutPaperCost = 10;
+        _coinCost = 50;
+        _populatyonCost = 0;
         //this.gameObject.GetComponent<BoxCollider2D>().enabled = true;
         _type = BuildingType.House;
         _receivedResources = 0;
@@ -18,15 +20,5 @@ public class House : Building
     {
         ResurceManager.AddPopulation((int)_receivedResources);
     }
-    public override bool TryToBuilding()
-    {
-        if (ResurceManager.CheckCutPaper(_cutPaperCost) && ResurceManager.CheckCoins(_coinCost))
-        {
-            ResurceManager.ReduceCutPaper(_cutPaperCost);
-            ResurceManager.ReduceCoins(_coinCost);
-            ResurceManager.AddExp(5);
-            return true;
-        }
-        return false;
-    }
+  
 }

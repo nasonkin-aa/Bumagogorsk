@@ -16,6 +16,8 @@ public class BuildingsGrid : MonoBehaviour
 
     public GameObject Road;
 
+    public BuildingCollisionController roadInstans;
+
     private void Awake()
     {
         grid = new BuildingCollisionController[SizeGrid.x,SizeGrid.y];
@@ -64,9 +66,8 @@ public class BuildingsGrid : MonoBehaviour
 
                 if (flyingBuildings.GetComponent<Building>().GetBuildingType() == (int)Matrix.DiamondStates.Roud)
                 {
-                    //var flyB = Instantiate( flyingBuildings);
                     RoadManager.OnRoadPlase(flyingBuildings.gameObject,(int)ComponentDIP.x,(int)ComponentDIP.y, Road);
-
+                    flyingBuildings.GetComponent<Building>().SpendCost();
                     flyingBuildings = null;
                     var neiborhood = Matrix.GetNeiborhood((int)ComponentDIP.x,(int)ComponentDIP.y);
                     
@@ -75,12 +76,15 @@ public class BuildingsGrid : MonoBehaviour
                         var pos = neighbor.Value.GetComponent<BuildingCollisionController>().BuildingStayPlace[0].GetComponent<DiamondsInMatrixPosition>().DimondPos;
 
                         RoadManager.OnRoadPlase(neighbor.Value,(int)pos.x,(int)pos.y, Road);
-                    }    
-                  //  flyingBuildings = flyB;
+                    }
+                    if (roadInstans.GetComponent<Building>().TryToBuilding())
+                        flyingBuildings = Instantiate(roadInstans);
+
                     return;
                 }
             }
             flyingBuildings.GetComponent<Building>().CorutinStart();
+            flyingBuildings.GetComponent<Building>().SpendCost();
             flyingBuildings = null;
         }
     }

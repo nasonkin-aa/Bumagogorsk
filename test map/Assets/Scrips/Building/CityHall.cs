@@ -16,8 +16,5 @@ public class CityHall : Building
         ResurceManager.AddPaper((int)_receivedResources);
     }
 
-    public override bool TryToBuilding()
-    {
-        return true;
-    }
+    
 }

@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class Mall : Building
 {
-    private int _cutPaperCost = 5;
     void Awake()
     {
+        _exp = 3;
+        _cutPaperCost = 5;
+        _populatyonCost = 0;
+        _coinCost = 0;
         _receivedResources = 0;
         _receivedMaxResources = 50;
         _generationSpeed = 3;
@@ -16,16 +19,5 @@ public class Mall : Building
     {
         ResurceManager.AddCoins((int)_receivedResources);
     }
-    public override bool TryToBuilding()
-    {
-        if (ResurceManager.CheckCutPaper(_cutPaperCost))
-        {
-
-            ResurceManager.ReduceCutPaper(_cutPaperCost);
-            ResurceManager.AddExp(5);
-            return true;
-        }
-        return false;
-    }
-   
+ 
 }

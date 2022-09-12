@@ -4,21 +4,16 @@ using UnityEngine;
 
 public class Road : Building
 {
-    private int _cutPaperCost = 1;
+    public void Awake()
+    {
+        _exp = 1;
+        _cutPaperCost = 1;
+         _coinCost = 0;
+         _populatyonCost = 0;
+    }
+
     public override void GetResurse()
     {
+        return;
     }
-
-  
-    public override bool TryToBuilding()
-    {
-        if (ResurceManager.CheckCutPaper(_cutPaperCost) )
-        {
-            ResurceManager.ReduceCutPaper(_cutPaperCost);
-            ResurceManager.AddExp(1);
-            return true;
-        }
-        return false;
-    }
-
 }
