@@ -6,7 +6,7 @@ public static class ResurceManager
 {
     public static int _paper { get; private set; }
     public static int _maxPaper { get; private set; } = 1000;
-    public static int _cutPaper { get; set; }
+    public static int _cutPaper { get; set; } = 100;
     public static int _population { get; private set; }
     public static int _MaxPopulation { get; private set; } = 10;
     public static int _coins { get; private set; }

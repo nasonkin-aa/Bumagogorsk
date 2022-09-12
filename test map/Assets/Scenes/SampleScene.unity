@@ -197,6 +197,7 @@ GameObject:
   - component: {fileID: 71566062}
   - component: {fileID: 71566064}
   - component: {fileID: 71566065}
+  - component: {fileID: 71566066}
   m_Layer: 5
   m_Name: Building
   m_TagString: Untagged
@@ -299,10 +300,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07946777, y: 3.1756744}
+  m_Offset: {x: -0.07946777, y: -31.2}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -313,8 +314,20 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1849.7305, y: 296.24387}
+  m_Size: {x: 1849.7305, y: 203.49}
   m_EdgeRadius: 0
+--- !u!114 &71566066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71566060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ff57f304267b6c4a95b3f03c5b22453, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &139606353
 GameObject:
   m_ObjectHideFlags: 0
@@ -3035,7 +3048,7 @@ MonoBehaviour:
   DiamondPos: {x: 0, y: 0}
   layerMask:
     serializedVersion: 2
-    m_Bits: 247
+    m_Bits: 215
 --- !u!4 &1122879265
 Transform:
   m_ObjectHideFlags: 0
