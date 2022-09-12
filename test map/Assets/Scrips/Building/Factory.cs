@@ -6,7 +6,7 @@ public class Factory : Building
 {
     //cutpaper
    
-    private void Awake()
+    public void Awake()
     {
         _exp = 5;
         _cutPaperCost = 10;

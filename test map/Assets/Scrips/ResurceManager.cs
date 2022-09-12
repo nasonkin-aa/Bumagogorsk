@@ -6,10 +6,10 @@ public static class ResurceManager
 {
     public static int _paper { get; private set; }
     public static int _maxPaper { get; private set; } = 1000;
-    public static int _cutPaper { get; set; } = 100;
-    public static int _population { get; private set; } = 1100;
+    public static int _cutPaper { get; set; }
+    public static int _population { get; private set; }
     public static int _MaxPopulation { get; private set; } = 10;
-    public static int _coins { get; private set; } = 10000;
+    public static int _coins { get; private set; }
     public static int _exp { get; private set; }
     public static int _maxExp { get; private set; } = 10;
     public static int _level { get; private set; }
@@ -33,10 +33,12 @@ public static class ResurceManager
     }
     public static bool CheckCutPaper(int amount)
     {
+        Debug.Log("Amount: " + amount + " cP: " + _cutPaper);
         return amount <= _cutPaper;
     }
     public static void ReduceCutPaper(int amount)
     {
+        Debug.Log("Amount: " + amount + " cP: " + _cutPaper + " reduce");
         _cutPaper -= amount;
     }
 

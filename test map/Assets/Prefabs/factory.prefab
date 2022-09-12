@@ -153,6 +153,10 @@ MonoBehaviour:
   _receivedMaxResources: 0
   _generationSpeed: 0
   progressSlider: {fileID: 6564962821689154369}
+  _cutPaperCost: 10
+  _populatyonCost: 10
+  _coinCost: 10
+  _exp: 5
 --- !u!114 &2712239069357546297
 MonoBehaviour:
   m_ObjectHideFlags: 0

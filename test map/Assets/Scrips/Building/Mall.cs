@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Mall : Building
 {
-    void Awake()
+    public void Awake()
     {
         _exp = 3;
         _cutPaperCost = 5;

@@ -301,6 +301,10 @@ MonoBehaviour:
   _receivedMaxResources: 0
   _generationSpeed: 0
   progressSlider: {fileID: 8191746458010101343}
+  _cutPaperCost: 10
+  _populatyonCost: 0
+  _coinCost: 0
+  _exp: 3
 --- !u!50 &8903345904427914900
 Rigidbody2D:
   serializedVersion: 4

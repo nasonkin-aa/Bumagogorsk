@@ -22,6 +22,16 @@ public class BuildingsGrid : MonoBehaviour
     {
         grid = new BuildingCollisionController[SizeGrid.x,SizeGrid.y];
         mainCamera = Camera.main;
+      /*  var pos = Matrix.Grid[18, 12].DiamondInMatrix.transform.position;
+        flyingBuildings = Instantiate(roadInstans, new Vector3(pos.x, pos.y, pos.y * 0.1f), Quaternion.identity);
+        flyingBuildings.GetComponent<BoxCollider2D>().enabled = false;
+        //MatrixAddElement(new Vector2(18, 12));
+        flyingBuildings.GetComponent<BoxCollider2D>().enabled = true;
+        flyingBuildings = null;*/
+    }
+    public void Start()
+    {
+      
     }
 
     public void StartPlacingBuilding(BuildingCollisionController buildingsPrefab)
@@ -90,6 +100,7 @@ public class BuildingsGrid : MonoBehaviour
 
         foreach (var neighbor in neiborhood)
         {
+            //neighbor.Value.Building.GetComponent<Collider2D>().enabled = true;
             var pos = neighbor.Value.Building.GetComponent<BuildingCollisionController>().BuildingStayPlace[0].GetComponent<DiamondsInMatrixPosition>().DimondPos;
 
             RoadManager.OnRoadPlase(neighbor.Value.Building, (int)pos.x, (int)pos.y, Road);

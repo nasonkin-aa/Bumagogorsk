@@ -11,7 +11,6 @@ public class BuildingCollisionController : MonoBehaviour
         {
             BuildingStayPlace.Add(collision.gameObject);
             BuildingCheck();
-            Debug.Log(BuildingStayPlace);
         }
     }
     public void OnTriggerExit2D(Collider2D collision)
@@ -40,7 +39,7 @@ public class BuildingCollisionController : MonoBehaviour
         }
             transform.GetComponent<SpriteRenderer>().color = Color.white;
 
-        if (!listNeiborhood.Contains(Matrix.DiamondStates.Roud) && transform.GetComponent<Building>().GetBuildingType() != (int)Building.BuildingType.Roud)
+        if (!listNeiborhood.Contains(Matrix.DiamondStates.Roud) /*&& transform.GetComponent<Building>().GetBuildingType() != (int)Building.BuildingType.Roud*/)
             transform.GetComponent<SpriteRenderer>().color = Color.red;
 
     }

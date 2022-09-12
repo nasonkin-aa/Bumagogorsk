@@ -13,6 +13,9 @@ public class Matrix : MonoBehaviour
 
     public GameObject DiamondPrefab;
 
+    public GameObject CityHoll;
+    public GameObject Road;
+
 
     public static bool IsFree(int x, int y) => grid[x, y].State != DiamondStates.None;
    
@@ -55,9 +58,14 @@ public class Matrix : MonoBehaviour
             }
         return list2;
     }
-    void Start()
+    void Awake()
     {
         CreateGride();
+    }
+    private void Start()
+    {
+        BuildinInit();
+
     }
     private void CreateGride()
     {
@@ -74,6 +82,34 @@ public class Matrix : MonoBehaviour
             }
         }
     }
+     private void BuildinInit()
+    {
+        for (int i = 20; i < 26; i++)
+            CreateDefaultRoad(new Vector2Int (i, 11));
+        CreateDefaultCityHall(new Vector3(-0.321963072f, -0.708952248f, -0.0708952248f));
+    }
 
+    private void CreateDefaultRoad(Vector2Int pos)
+    {
+        grid[pos.x, pos.y].Building = Instantiate(Road, grid[pos.x, pos.y].DiamondInMatrix.transform.position,Quaternion.identity);
+        grid[pos.x, pos.y].State = (DiamondStates)grid[pos.x, pos.y].Building.GetComponent<Building>().GetBuildingType();
+        grid[pos.x, pos.y].Building.GetComponent<Collider2D>().enabled = false;
+        grid[pos.x, pos.y].Building.transform.rotation = Quaternion.Euler(0, 180, 0);
+        grid[pos.x, pos.y].Building.GetComponent<BuildingCollisionController>().BuildingStayPlace.Add(grid[pos.x, pos.y].DiamondInMatrix);
+    }
+
+    private void CreateDefaultCityHall(Vector3 pos)
+    {
+        GameObject cityHall = Instantiate(CityHoll, pos, Quaternion.identity);
+        cityHall.GetComponent<Building>().CorutinStart();
+        cityHall.GetComponent<Collider2D>().enabled = false;
+        for (int x = 21; x <= 24; x++)
+            for (int y = 12; y <= 14; y++)
+            {
+                grid[x, y].Building = cityHall;
+                grid[x, y].State = (DiamondStates)grid[x, y].Building.GetComponent<Building>().GetBuildingType();
+                grid[x, y].Building.GetComponent<BuildingCollisionController>().BuildingStayPlace.Add(grid[x, y].DiamondInMatrix);
+            }
+    }
 }
 
