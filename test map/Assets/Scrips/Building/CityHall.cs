@@ -8,7 +8,7 @@ public class CityHall : Building
     {
         _receivedResources = 0;
         _receivedMaxResources = 8;
-        _generationSpeed = 5;
+        _generationSpeed = 3;
         _type = BuildingType.CityHall;
     }
     public override void GetResurse()

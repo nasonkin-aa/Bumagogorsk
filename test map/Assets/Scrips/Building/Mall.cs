@@ -12,7 +12,7 @@ public class Mall : Building
         _coinCost = 0;
         _receivedResources = 0;
         _receivedMaxResources = 50;
-        _generationSpeed = 3;
+        _generationSpeed = 4;
         _type = BuildingType.Mall;
     }
     public override void GetResurse()

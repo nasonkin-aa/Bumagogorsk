@@ -5,10 +5,10 @@ using UnityEngine;
 public static class ResurceManager 
 {
     public static int _paper { get; set; } = 5;
-    public static int _maxPaper { get; private set; } = 1000;
+    public static int _maxPaper { get; private set; } = 100;
     public static int _cutPaper { get; set; } = 5;
     public static int _population { get; private set; } 
-    public static int _MaxPopulation { get; private set; } = 10;
+    public static int _MaxPopulation { get; private set; } = 15;
     public static int _coins { get; private set; } 
     public static int _exp { get; private set; }
     public static int _maxExp { get; private set; } = 10;
