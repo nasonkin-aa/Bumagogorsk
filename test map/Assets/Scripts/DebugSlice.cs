@@ -60,4 +60,8 @@ public class DebugSlice : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        cutPaperCount.text = (ResurceManager._cutPaper).ToString();
+    }
 }
