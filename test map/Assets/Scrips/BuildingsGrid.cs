@@ -67,30 +67,26 @@ public class BuildingsGrid : MonoBehaviour
         {
             foreach (GameObject place in flyingBuildings.BuildingStayPlace)
             {
-                Matrix.Grid[(int)place.GetComponent<DiamondsInMatrixPosition>().DimondPos.x,
-                (int)place.GetComponent<DiamondsInMatrixPosition>().DimondPos.y].State = (Matrix.DiamondStates)flyingBuildings.GetComponent<Building>().GetBuildingType();
+                var ComponentDIP = place.GetComponent<DiamondsInMatrixPosition>().DimondPos;
 
-                Matrix.Grid[(int)place.GetComponent<DiamondsInMatrixPosition>().DimondPos.x,
-                (int)place.GetComponent<DiamondsInMatrixPosition>().DimondPos.y].Building = flyingBuildings.gameObject;
+                Matrix.Grid[(int)ComponentDIP.x,(int)ComponentDIP.y].State = 
+                    (Matrix.DiamondStates)flyingBuildings.GetComponent<Building>().GetBuildingType();
+
+                Matrix.Grid[(int)ComponentDIP.x,(int)ComponentDIP.y].Building = flyingBuildings.gameObject;
 
                 if (flyingBuildings.GetComponent<Building>().GetBuildingType() == (int)Matrix.DiamondStates.Roud)
                 {
                     //var flyB = Instantiate( flyingBuildings);
-                    RoadManager.OnRoadPlase(flyingBuildings.gameObject,
-                        (int)place.GetComponent<DiamondsInMatrixPosition>().DimondPos.x,
-                        (int)place.GetComponent<DiamondsInMatrixPosition>().DimondPos.y, Road);
+                    RoadManager.OnRoadPlase(flyingBuildings.gameObject,(int)ComponentDIP.x,(int)ComponentDIP.y, Road);
 
                     flyingBuildings = null;
-                    var neiborhood = 
-                    Matrix.GetNeiborhood((int)place.GetComponent<DiamondsInMatrixPosition>().DimondPos.x,
-                        (int)place.GetComponent<DiamondsInMatrixPosition>().DimondPos.y);
+                    var neiborhood = Matrix.GetNeiborhood((int)ComponentDIP.x,(int)ComponentDIP.y);
                     
                     foreach (var neighbor in neiborhood)
                     {
                         var pos = neighbor.Value.GetComponent<BuildingCollisionController>().BuildingStayPlace[0].GetComponent<DiamondsInMatrixPosition>().DimondPos;
-                        RoadManager.OnRoadPlase(neighbor.Value,
-                        (int)pos.x,
-                        (int)pos.y, Road);
+
+                        RoadManager.OnRoadPlase(neighbor.Value,(int)pos.x,(int)pos.y, Road);
                     }    
                   //  flyingBuildings = flyB;
                     return;

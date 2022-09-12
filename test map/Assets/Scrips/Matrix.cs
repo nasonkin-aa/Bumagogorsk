@@ -46,11 +46,11 @@ public class Matrix : MonoBehaviour
             for(int i = -1; i < 2; i += 2)
             {
                 if (0 <= i + x && i + x < gridSizeX && 0 <= y  && y < gridSizeY)
-                    if (grid[x + i,y].State != DiamondStates.None)
+                    if (grid[x + i,y].State == DiamondStates.Roud)
                         list2.Add((sides)counter, grid[x + i, y].Building);
                 counter++;
                 if (0 <= x && x < gridSizeX && 0 <= i + y && i + y < gridSizeY)
-                    if (grid[x , y + i].State != DiamondStates.None)
+                    if (grid[x , y + i].State == DiamondStates.Roud)
                         list2.Add((sides)counter, grid[x, y + i].Building);
                 counter++;
             }
