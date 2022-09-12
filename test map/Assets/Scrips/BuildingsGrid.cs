@@ -55,38 +55,54 @@ public class BuildingsGrid : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && flyingBuildings.GetComponent<SpriteRenderer>().color != Color.red )
         {
+            /*var listNeiborhood = new List<Matrix.DiamondStates>();*/
             foreach (GameObject place in flyingBuildings.BuildingStayPlace)
             {
                 var ComponentDIP = place.GetComponent<DiamondsInMatrixPosition>().DimondPos;
+                /*foreach (var neibor in Matrix.GetNeiborhood((int)ComponentDIP.x, (int)ComponentDIP.y))
+                {
+                    listNeiborhood.Add(neibor.Value.State);
+                }*/
 
-                Matrix.Grid[(int)ComponentDIP.x,(int)ComponentDIP.y].State = 
-                    (Matrix.DiamondStates)flyingBuildings.GetComponent<Building>().GetBuildingType();
-
-                Matrix.Grid[(int)ComponentDIP.x,(int)ComponentDIP.y].Building = flyingBuildings.gameObject;
+                MatrixAddElement(ComponentDIP);
 
                 if (flyingBuildings.GetComponent<Building>().GetBuildingType() == (int)Matrix.DiamondStates.Roud)
                 {
-                    RoadManager.OnRoadPlase(flyingBuildings.gameObject,(int)ComponentDIP.x,(int)ComponentDIP.y, Road);
-                    flyingBuildings.GetComponent<Building>().SpendCost();
-                    flyingBuildings = null;
-                    var neiborhood = Matrix.GetNeiborhood((int)ComponentDIP.x,(int)ComponentDIP.y);
-                    
-                    foreach (var neighbor in neiborhood)
-                    {
-                        var pos = neighbor.Value.GetComponent<BuildingCollisionController>().BuildingStayPlace[0].GetComponent<DiamondsInMatrixPosition>().DimondPos;
-
-                        RoadManager.OnRoadPlase(neighbor.Value,(int)pos.x,(int)pos.y, Road);
-                    }
-                    if (roadInstans.GetComponent<Building>().TryToBuilding())
-                        flyingBuildings = Instantiate(roadInstans);
-
+                    CreatRoad(ComponentDIP);
                     return;
                 }
             }
-            flyingBuildings.GetComponent<Building>().CorutinStart();
-            flyingBuildings.GetComponent<Building>().SpendCost();
-            flyingBuildings = null;
+            /*if (listNeiborhood.Contains(Matrix.DiamondStates.Roud))*/
+            {
+                flyingBuildings.GetComponent<Building>().CorutinStart();
+                flyingBuildings.GetComponent<Building>().SpendCost();
+                flyingBuildings = null;
+            }
         }
     }
 
+    private void CreatRoad(Vector2 ComponentDIP)
+    {
+        RoadManager.OnRoadPlase(flyingBuildings.gameObject, (int)ComponentDIP.x, (int)ComponentDIP.y, Road);
+        flyingBuildings.GetComponent<Building>().SpendCost();
+        flyingBuildings = null;
+        var neiborhood = Matrix.GetNeiborhood((int)ComponentDIP.x, (int)ComponentDIP.y);
+
+        foreach (var neighbor in neiborhood)
+        {
+            var pos = neighbor.Value.Building.GetComponent<BuildingCollisionController>().BuildingStayPlace[0].GetComponent<DiamondsInMatrixPosition>().DimondPos;
+
+            RoadManager.OnRoadPlase(neighbor.Value.Building, (int)pos.x, (int)pos.y, Road);
+        }
+        if (roadInstans.GetComponent<Building>().TryToBuilding())
+            flyingBuildings = Instantiate(roadInstans);
+    }
+
+    private void MatrixAddElement(Vector2 ComponentDIP)
+    {
+        Matrix.Grid[(int)ComponentDIP.x, (int)ComponentDIP.y].State =
+            (Matrix.DiamondStates)flyingBuildings.GetComponent<Building>().GetBuildingType();
+
+        Matrix.Grid[(int)ComponentDIP.x, (int)ComponentDIP.y].Building = flyingBuildings.gameObject;
+    }
 }

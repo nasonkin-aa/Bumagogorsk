@@ -38,20 +38,19 @@ public class Matrix : MonoBehaviour
         right,
         top,
     }
-    public static Dictionary<sides,GameObject> GetNeiborhood(int x, int y)
+    public static Dictionary<sides,MatrixElements> GetNeiborhood(int x, int y)
     {
-        var list2 = new Dictionary<sides, GameObject>();
+        var list2 = new Dictionary<sides, MatrixElements>();
         var counter = 0;
-        List<GameObject> list = new List<GameObject>();
             for(int i = -1; i < 2; i += 2)
             {
                 if (0 <= i + x && i + x < gridSizeX && 0 <= y  && y < gridSizeY)
                     if (grid[x + i,y].State == DiamondStates.Roud)
-                        list2.Add((sides)counter, grid[x + i, y].Building);
+                        list2.Add((sides)counter, grid[x + i, y]);
                 counter++;
                 if (0 <= x && x < gridSizeX && 0 <= i + y && i + y < gridSizeY)
                     if (grid[x , y + i].State == DiamondStates.Roud)
-                        list2.Add((sides)counter, grid[x, y + i].Building);
+                        list2.Add((sides)counter, grid[x, y + i]);
                 counter++;
             }
         return list2;
