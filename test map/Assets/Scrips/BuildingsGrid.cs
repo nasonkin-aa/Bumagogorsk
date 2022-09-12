@@ -86,6 +86,7 @@ public class BuildingsGrid : MonoBehaviour
             {
                 flyingBuildings.GetComponent<Building>().CorutinStart();
                 flyingBuildings.GetComponent<Building>().SpendCost();
+                flyingBuildings.gameObject.layer = 8;
                 flyingBuildings = null;
             }
         }
@@ -95,6 +96,7 @@ public class BuildingsGrid : MonoBehaviour
     {
         RoadManager.OnRoadPlase(flyingBuildings.gameObject, (int)ComponentDIP.x, (int)ComponentDIP.y, Road);
         flyingBuildings.GetComponent<Building>().SpendCost();
+        flyingBuildings.gameObject.layer = 8;
         flyingBuildings = null;
         var neiborhood = Matrix.GetNeiborhood((int)ComponentDIP.x, (int)ComponentDIP.y);
 

@@ -19,10 +19,10 @@ public abstract class Building : MonoBehaviour
     protected Slider progressSlider;
     protected bool IsMousDown;
 
-    protected int _cutPaperCost ;
-    protected int _populatyonCost = 0;
-    protected int _coinCost = 0;
-    protected int _exp = 0;
+    public int _cutPaperCost ;
+    public int _populatyonCost = 0;
+    public int _coinCost = 0;
+    public int _exp = 0;
 
     public int GetBuildingType()
     {
@@ -60,8 +60,9 @@ public abstract class Building : MonoBehaviour
     public  bool TryToBuilding()
     {
 
-        Debug.Log(ResurceManager.CheckCutPaper((int)_cutPaperCost));
-         
+        Debug.Log(ResurceManager.CheckCutPaper((int)_cutPaperCost) + "12321123");
+
+
         var bola = ResurceManager.CheckCutPaper((int)_cutPaperCost) && ResurceManager.CheckCoins(_coinCost) && ResurceManager.CheckPopulation(_populatyonCost);
         return bola;
     }

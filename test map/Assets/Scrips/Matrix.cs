@@ -86,7 +86,7 @@ public class Matrix : MonoBehaviour
     {
         for (int i = 20; i < 26; i++)
             CreateDefaultRoad(new Vector2Int (i, 11));
-        CreateDefaultCityHall(new Vector3(-0.321963072f, -0.708952248f, -0.0708952248f));
+        CreateDefaultCityHall(new Vector3(2.23999977f,-0.0899999142f,-0.00899999123f));
     }
 
     private void CreateDefaultRoad(Vector2Int pos)
