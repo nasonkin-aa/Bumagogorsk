@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Slicer2D;
 
 public class CreatePaper : MonoBehaviour
 {
+    public Text Paper;
     public GameObject paper;
     public GameObject parent;
     public int time = 2;
@@ -19,10 +21,14 @@ public class CreatePaper : MonoBehaviour
     {
         if (timer > time)
         {
-            GameObject paperNew = Instantiate(paper, transform.position, transform.rotation, parent.transform);
+            if (ResurceManager._paper > 0)
+            {
+                Paper.text = (--ResurceManager._paper).ToString();
+                GameObject paperNew = Instantiate(paper, transform.position, transform.rotation, parent.transform);
+            }
             timer = 0;
         }
-        
+        Paper.text = ResurceManager._paper.ToString();
         timer += Time.deltaTime;
     }
 }
