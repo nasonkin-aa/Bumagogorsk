@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class Road : Building
 {
+    private int _cutPaperCost = 1;
     public override void GetResurse()
     {
     }
 
+  
     public override bool TryToBuilding()
     {
-        return true;
+        if (ResurceManager.CheckCutPaper(_cutPaperCost) )
+        {
+            ResurceManager.ReduceCutPaper(_cutPaperCost);
+            ResurceManager.AddExp(1);
+            return true;
+        }
+        return false;
     }
 
-    // Start is called before the first frame update
-  
 }

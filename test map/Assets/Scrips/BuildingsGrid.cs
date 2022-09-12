@@ -40,18 +40,6 @@ public class BuildingsGrid : MonoBehaviour
         }
         flyingBuildings = Instantiate(buildingsPrefab);
     }
-/*    public void StartPlacingRoad(BuildingCollisionController road)
-    {
-        if (!road.GetComponent<Building>().TryToBuilding())
-        {
-            return;
-        }
-        if (flyingBuildings != null)
-        {
-            Destroy(flyingBuildings.gameObject);
-        }
-        flyingBuildings = Instantiate(road);
-    }*/
 
     void Update()
     { 
