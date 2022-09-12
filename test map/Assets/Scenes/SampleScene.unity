@@ -359,6 +359,7 @@ GameObject:
   - component: {fileID: 71566064}
   - component: {fileID: 71566065}
   - component: {fileID: 71566066}
+  - component: {fileID: 71566067}
   m_Layer: 5
   m_Name: Building
   m_TagString: Untagged
@@ -491,6 +492,28 @@ MonoBehaviour:
   m_EffectColor: {r: 0.41509432, g: 0.40393376, b: 0.38533285, a: 0.5}
   m_EffectDistance: {x: 5, y: 5}
   m_UseGraphicAlpha: 1
+--- !u!114 &71566067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71566060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4e3d01d3ecd1ce41aa3ba0d62039e85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listoch:
+  - {fileID: 1798931482}
+  - {fileID: 1318624502}
+  people:
+  - {fileID: 2124035588}
+  paper:
+  - {fileID: 161693924}
+  - {fileID: 1885050983}
+  - {fileID: 1235007247}
+  - {fileID: 1860118113}
 --- !u!1 &139606353
 GameObject:
   m_ObjectHideFlags: 0
@@ -667,7 +690,7 @@ GameObject:
   - component: {fileID: 161693926}
   m_Layer: 0
   m_Name: buttons_4
-  m_TagString: Untagged
+  m_TagString: Paper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2649,6 +2672,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 737955831}
+  - component: {fileID: 737955832}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -2678,6 +2702,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &737955832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737955830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4e3d01d3ecd1ce41aa3ba0d62039e85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listoch: []
+  people: []
+  paper: []
 --- !u!1 &762226865
 GameObject:
   m_ObjectHideFlags: 0
@@ -3925,7 +3964,7 @@ GameObject:
   - component: {fileID: 1235007249}
   m_Layer: 0
   m_Name: buttons_4
-  m_TagString: Untagged
+  m_TagString: Paper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4164,7 +4203,7 @@ GameObject:
   - component: {fileID: 1318624504}
   m_Layer: 0
   m_Name: Listoch
-  m_TagString: Untagged
+  m_TagString: Listoch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5676,7 +5715,7 @@ GameObject:
   - component: {fileID: 1798931484}
   m_Layer: 0
   m_Name: Listoch
-  m_TagString: Untagged
+  m_TagString: Listoch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5957,7 +5996,7 @@ GameObject:
   - component: {fileID: 1860118115}
   m_Layer: 0
   m_Name: buttons_4
-  m_TagString: Untagged
+  m_TagString: Paper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6202,7 +6241,7 @@ GameObject:
   - component: {fileID: 1885050985}
   m_Layer: 0
   m_Name: buttons_4
-  m_TagString: Untagged
+  m_TagString: Paper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6656,7 +6695,7 @@ GameObject:
   - component: {fileID: 2124035590}
   m_Layer: 0
   m_Name: buttons_1
-  m_TagString: Untagged
+  m_TagString: People
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
